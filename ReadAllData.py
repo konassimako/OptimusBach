@@ -141,11 +141,9 @@ if tokenSequence == decodedSequence:
     print("You beautiful bastard you did it!")
 # Now we are going to use pickle to save the encoding and decoding dictionaries as well as the encoded sequence to
 # memory, so that we can use them in other files too
-with open('/Users/Konstandinos/Desktop/encodingDictionary.pkl', 'wb') as f:
+with open('/filepath/encodingDictionary.pkl', 'wb') as f:
     pickle.dump(tokens, f)  # pickling the encoding dictionary
-with open('/Users/Konstandinos/Desktop/decodingDictionary.pkl', 'wb') as f:
+with open('/filepath/decodingDictionary.pkl', 'wb') as f:
     pickle.dump(dec_tokens, f)  # pickling the decoding dictionary
-with open('/Users/Konstandinos/Desktop/encodedSequence.pkl', 'wb') as f:
+with open('/filepath/encodedSequence.pkl', 'wb') as f:
     pickle.dump(encodedSequence, f)  # pickling the encoded sequence
-with open('/Users/Konstandinos/Desktop/Generation/sopranoOnlySequence.pkl', 'wb') as f:
-    pickle.dump(sopranoOnlySequence, f)
