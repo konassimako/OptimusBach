@@ -7,7 +7,7 @@ from random import shuffle
 
 
 # let's read our encoded sequence from memory
-with open('/Users/Konstandinos/Desktop/encodedSequence.pkl', 'rb') as f:
+with open('/filepath/encodedSequence.pkl', 'rb') as f:
     encodedSequence = pickle.load(f)
 # let's preprocess the data
 encodedSoprano = []  # This is a list containing all the soprano sequences
@@ -59,13 +59,13 @@ for i in range(len(encodedSoprano)):
         break
 print(allesOK)
 """
-with open("/Users/Konstandinos/Desktop/Generation/encodedSoprano.pkl", "wb") as f:
+with open("/filepath/encodedSoprano.pkl", "wb") as f:
     pickle.dump(encodedSoprano,f)
 # The existence of fermatas in some time steps means that not all sequences will have the same length.
 # We need to perform data padding. Let's load our dictionaries to create a padding token first
-with open('/Users/Konstandinos/Desktop/encodingDictionary.pkl', 'rb') as f:
+with open('/filepath/encodingDictionary.pkl', 'rb') as f:
     encodingDictionary = pickle.load(f)
-with open('/Users/Konstandinos/Desktop/decodingDictionary.pkl', 'rb') as f:
+with open('/filepath/decodingDictionary.pkl', 'rb') as f:
     decodingDictionary = pickle.load(f)
 encodingDictionary["PAD"] = 120  # Add the new padding token to our dictionaries
 decodingDictionary[120] = "PAD"
@@ -94,11 +94,11 @@ for i in range(len(encodedSoprano)):
     pairs.append((encodedSoprano[i], encodedHarmonization[i]))
 # To test our network architecture we are going to create a small dataset (20% of the dataset) and run training
 # But first of all let's save our entire dataset and our updated dictionaries
-with open('/Users/Konstandinos/Desktop/Generation/BigDataset.pkl', 'wb') as f:
+with open('/filepath/BigDataset.pkl', 'wb') as f:
     pickle.dump(pairs, f)
-with open('/Users/Konstandinos/Desktop/encodingDictionary.pkl', 'wb') as f:
+with open('/filepath/encodingDictionary.pkl', 'wb') as f:
     pickle.dump(encodingDictionary, f)
-with open('/Users/Konstandinos/Desktop/decodingDictionary.pkl', 'wb') as f:
+with open('/filepath/decodingDictionary.pkl', 'wb') as f:
     pickle.dump(decodingDictionary, f)
 # Now let's shuffle the list and create our small dataset
 shuffle(pairs)
@@ -121,11 +121,11 @@ for i in range(len(pairs)):
     else:
         remainingDataset.append(pairs[i])
 # Let's save our datasets
-with open('/Users/Konstandinos/Desktop/Generation/SmallTrainDataset.pkl', 'wb') as f:
+with open('/filepath/SmallTrainDataset.pkl', 'wb') as f:
     pickle.dump(smallTrainDataset, f)
-with open('/Users/Konstandinos/Desktop/Generation/SmallValDataset.pkl', 'wb') as f:
+with open('/filepath/SmallValDataset.pkl', 'wb') as f:
     pickle.dump(smallValDataset, f)
-with open('/Users/Konstandinos/Desktop/Generation/RemainingDataset.pkl', 'wb') as f:
+with open('/filepath/RemainingDataset.pkl', 'wb') as f:
     pickle.dump(remainingDataset, f)
 # Just checking the sizes
 print(f"Small training dataset size is: {len(smallTrainDataset)}")
