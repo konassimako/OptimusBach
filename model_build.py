@@ -1,3 +1,6 @@
+# You need the dataset files to run this program.
+# This program uses the transformer_model.py file to train the model. Once training is finished it saves the weights and plots the training error history.
+
 from transformer_model import *
 from tensorflow.keras.callbacks import EarlyStopping
 import pickle
