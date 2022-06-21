@@ -1,0 +1,1 @@
+This folder contains the melodies used for music generation in the thesis. Because of their size some melodies are broken into two parts.
