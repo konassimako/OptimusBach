@@ -38,9 +38,9 @@ def makeDataset(pairs):
 
 
 # Let's load our data
-with open('/Users/Konstandinos/Desktop/Datasets/SmallTrainDataset.pkl', 'rb') as f:
+with open('/filePath/SmallTrainDataset.pkl', 'rb') as f:
     trainPairs = pickle.load(f)
-with open('/Users/Konstandinos/Desktop/Datasets/SmallValDataset.pkl', 'rb') as f:
+with open('/filepath/SmallValDataset.pkl', 'rb') as f:
     valPairs = pickle.load(f)
 # Now let's make them tensorflow dataframes
 trainDataset = makeDataset(trainPairs)
@@ -76,7 +76,7 @@ monitor = EarlyStopping(monitor='val_loss', min_delta=1e-3, patience=5,
                         verbose=1, mode='auto', restore_best_weights=True)
 history = transformer.fit(trainDataset, epochs=epochs, validation_data=valDataset,
                           callbacks=[monitor])
-transformer.save_weights("/Users/Konstandinos/Desktop/SmallSingleLayerModel.h5")
+transformer.save_weights("/filepath/SmallSingleLayerModel.h5")
 # Let's plot the training and validation loss
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
