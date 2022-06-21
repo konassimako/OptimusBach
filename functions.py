@@ -1,3 +1,4 @@
+# This file is used by the ReadAllData.py file. It contains necessary functions to read the data.
 from music21 import *
 
 
