@@ -1,4 +1,5 @@
-# This program uses the music21 library to read all of Bach's chorales. It then encodes them and saves them using picle.
+# This program uses the music21 library to read all of Bach's chorales. It then encodes them and saves them using pickle.
+# You need the functions.py file to run this code.
 from functions import *
 import pickle
 
