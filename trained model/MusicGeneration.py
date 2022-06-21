@@ -1,5 +1,5 @@
 # This program uses the trained OptimusBach model to harmonise a melody.
-# Please change the filepaths to match where you have saved the encodingDictionary.pkl, the meoldy.pkl and modelWeights.h5
+# Please change the filepaths to match where you have saved the encodingDictionary.pkl, the meoldy.pkl and SmallSingleLayerModel.h5
 # and where you want the generated sequence to be saved.
 # For more information see the ReadMe on this folder
 
@@ -32,7 +32,7 @@ decoder_outputs = decoder([decoder_inputs, encoder_outputs])
 transformer = keras.Model(
     [encoder_inputs, decoder_inputs], decoder_outputs, name="transformer")
 # Let's load the weights of the trained model
-transformer.load_weights("filepath/modelWeights.h5")
+transformer.load_weights("filepath/SmallSingleLayerModel.h5")
 transformer.summary()
 # Let's compile the model
 transformer.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
