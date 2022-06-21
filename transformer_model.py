@@ -1,5 +1,7 @@
 # This file defines the Transformer Encoder and Decoder classes as well as the Positional Embedding layer.
-# This code was taken from the keras-team profile (https://github.com/keras-team/keras-io/blob/master/examples/nlp/neural_machine_translation_with_transformer.py) under the Apach 2.0 licence.
+# This code was taken from the keras-team profile from the keras-io repository.
+# (https://github.com/keras-team/keras-io/blob/master/examples/nlp/neural_machine_translation_with_transformer.py)
+# This code was used in this project under the Apache 2.0 license.
 
 import tensorflow as tf
 from tensorflow import keras
