@@ -4,3 +4,7 @@
 
 In this project, a sequence-to-sequence Transformer model was trained on a dataset build from Bach's chorales. The dataset was constructed using the music21 Python library and the Transformer model was build using tensorflow's Keras API. The resulting trained model is capable of producing harmonisations for any melody that does not exceed 8 quarter notes in length.
 
+## Project Structure
+
+The image below gives a visual represenation of how all the different files in this project work together.
+
