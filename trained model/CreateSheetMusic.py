@@ -1,3 +1,4 @@
+######## IMPORTANT NOTE ########
 # This file contains functions used by the GeneratedSequenceDecoding file.
 # They need to be saved in the same folder.
 
