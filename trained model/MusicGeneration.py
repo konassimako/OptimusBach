@@ -64,12 +64,3 @@ for i in range(max_seq_length):
 print("Done and done!")
 with open("/filepath/generated_music.pkl", "wb") as f:
     pickle.dump([(melody[0], decoded_sequence[0])], f)
-print("yo ho")
-
-
-
-
-
-
-
-
