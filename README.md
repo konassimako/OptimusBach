@@ -8,3 +8,5 @@ In this project, a sequence-to-sequence Transformer model was trained on a datas
 
 The image below gives a visual represenation of how all the different files in this project work together.
 
+![alt text](https://raw.githubusercontent.com/konassimako/OptimusBach/main/program_visual_structure.png "Visual representation of the project")
+
