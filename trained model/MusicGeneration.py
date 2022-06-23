@@ -1,7 +1,7 @@
 # This program uses the trained OptimusBach model to harmonise a melody.
 # Please change the filepaths to match where you have saved the encodingDictionary.pkl, the meoldy.pkl and SmallSingleLayerModel.h5
 # and where you want the generated sequence to be saved.
-# For more information see the ReadMe on this folder
+# For more information see the ReadMe.md file
 
 from transformer_model import *
 import pickle
@@ -32,15 +32,30 @@ decoder_outputs = decoder([decoder_inputs, encoder_outputs])
 transformer = keras.Model(
     [encoder_inputs, decoder_inputs], decoder_outputs, name="transformer")
 # Let's load the weights of the trained model
+
+######## CHANGE THE MODEL WEIGHTS FILEPATH HERE ########
+
 transformer.load_weights("filepath/SmallSingleLayerModel.h5")
+
+################
+
 transformer.summary()
 # Let's compile the model
 transformer.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 # Let's load a melody from the big dataset (that was not used in training to test it)
+
+######## CHANGE THE MELODY FILEPATH HERE ########
+
 with open("/filepath/melody.pkl", "rb") as f:
     dataset = pickle.load(f)
+
+######## CHANGE THE ENCODING DICTIONARY FILEPATH HERE ########
+    
 with open("/filepath/encodingDictionary.pkl", "rb") as f:
     encodingDictionary = pickle.load(f)
+
+################
+ 
 for i in range(len(dataset)):
     dataset[i] = encodingDictionary[dataset[i]]
 paddingMelody = [120] * (sequence_length - len(dataset))
@@ -61,6 +76,12 @@ for i in range(max_seq_length):
 
     if sampled_token == 1:
         break
-print("Done and done!")
+
+        
+######## CHANGE THE FILEPATH FOR THE GENERATED MELODY HERE ########
+
 with open("/filepath/generated_music.pkl", "wb") as f:
     pickle.dump([(melody[0], decoded_sequence[0])], f)
+
+    
+################
