@@ -26,8 +26,14 @@ def checkDuration(mel, har):
 
 
 # Let's load our generated music and split it into melody and harmonization
+
+######## CHANGE THE FILEPATH OF THE GENERATED MUSIC HERE ########
+
 with open("/filepath/generated_music.pkl", "rb") as f:
     generatedSequence = pickle.load(f)
+
+################   
+    
 melody, harmonization = zip(*generatedSequence)
 melody = list(melody)[0]
 harmonization = list(harmonization)[0]
@@ -35,8 +41,14 @@ harmonization = list(harmonization)[0]
 durationOK = checkDuration(melody, harmonization)
 print(f"The piece duration is ok = {durationOK}")
 # Let's load the decoding dictionary
+
+######## CHANGE THE FILEPATH TO THE DECODING DICTIONARY HERE
+
 with open("/filepath/decodingDictionary.pkl", "rb") as f:
     decDictionary = pickle.load(f)
+
+################  
+    
 # Now let's decode the melody and the harmonization
 decDictionary[120] = "PAD"
 decodedMelody = []
